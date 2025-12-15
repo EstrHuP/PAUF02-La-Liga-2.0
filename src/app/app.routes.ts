@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomePage } from './features/home/pages/home-page/home-page';
 import { TeamsPage } from './features/teams/pages/teams-page/teams-page';
+import { ResultsPage } from './features/results/pages/results-page/results-page';
 
 export const routes: Routes = [
     // HOME
@@ -17,5 +18,13 @@ export const routes: Routes = [
         redirectTo: 'teams',
         pathMatch: 'full'
     },
-    { path:'teams', component: TeamsPage }
+    { path:'teams', component: TeamsPage },
+
+    // RESULTS
+    {
+        path: '',
+        redirectTo: 'results',
+        pathMatch: 'full'
+    },
+    { path:'results', component: ResultsPage }
 ];
