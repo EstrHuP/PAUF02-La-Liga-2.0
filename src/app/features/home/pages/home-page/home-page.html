@@ -50,49 +50,61 @@
 
   <!-- Competitions -->
   <section id="competitions" class="py-5">
-    <div class="container">
-      <h2 class="text-center fw-bold mb-4">Competiciones actuales</h2>
+      <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold">Competiciones actuales</h2>
+            <p class="lead">Consulta el estado de las competiciones existentes.</p>
+          </div>
 
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card h-100 shadow">
-            <img src="assets/img/inscribete-ahora.png" class="card-img-top"/>
-            <div class="card-body">
-              <h5 class="card-title">Liga de Fútbol</h5>
-              <p class="card-text">Temporada de octubre a marzo.</p>
+          <div class="row g-4">
+            <!-- Competition 1 -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm border-0">
+                <img src="assets/img/inscribete-ahora.png" class="card-img-top" style="max-height: 180px;" alt="Liga de Fútbol">
+                <div class="card-body">
+                  <h5 class="card-title text-primary fw-bold">Liga de Fútbol Escolar</h5>
+                  <p class="card-text">12 equipos compiten por el trofeo anual. La temporada se extiende de octubre a marzo.</p>
+                  <p class="text-muted small">Próxima jornada: 15 de noviembre.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0 d-flex justify-content-between">
+                  <a routerLink="/results" class="btn btn-primary btn-sm">Ver resultados</a>
+                  <a routerLink="/contact" class="btn btn-outline-primary btn-sm">Contacto</a>
+                </div>
+              </div>
             </div>
-            <div class="card-footer bg-transparent">
-              <a routerLink="/results" class="btn btn-primary btn-sm">Ver resultados</a>
+
+          <!-- Competition 2 -->
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <img src="assets/img/baloncesto-new.png" class="card-img-top" style="max-height: 180px;" alt="Liga de Baloncesto">
+              <div class="card-body">
+                <h5 class="card-title text-primary fw-bold">Liga de Baloncesto</h5>
+                <p class="card-text">Participa en la competición más reñida. Equipos femeninos compitiendo por ser el mejor centro.</p>
+                <p class="text-muted small">Echa un vistazo a los equipos.</p>
+              </div>
+              <div class="card-footer bg-transparent border-0 d-flex justify-content-between">
+                <a routerLink="/teams" class="btn btn-primary btn-sm">Ver equipos</a>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalNew2">Saber más</button>
+              </div>
+            </div>
+          </div>
+
+        <!-- Competition 3 -->
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <img src="assets/img/volleyball-team.svg" class="card-img-top" style="max-height: 180px;" alt="Liga de Baloncesto">
+              <div class="card-body">
+                <h5 class="card-title text-primary fw-bold">Torneo de voleibol</h5>
+                <p class="card-text">El torneo más emocionante del año. Equipos mixtos compitiendo por la copa de invierno.</p>
+                <p class="text-muted small">¡Ya están los resultados!</p>
+              </div>
+              <div class="card-footer bg-transparent border-0 d-flex justify-content-between">
+                <a routerLink="/results" class="btn btn-primary btn-sm">Ver resultados</a>
+                <a routerLink="/contact" class="btn btn-outline-primary btn-sm">Contacto</a>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="col-md-4">
-          <div class="card h-100 shadow">
-            <img src="assets/img/baloncesto-new.png" class="card-img-top"/>
-            <div class="card-body">
-              <h5 class="card-title">Baloncesto</h5>
-              <p class="card-text">Equipos femeninos compitiendo.</p>
-            </div>
-            <div class="card-footer bg-transparent">
-              <a routerLink="/teams" class="btn btn-primary btn-sm">Ver equipos</a>
-            </div>
-          </div>
         </div>
-
-        <div class="col-md-4">
-          <div class="card h-100 shadow">
-            <img src="assets/img/volleyball-team.svg" class="card-img-top"/>
-            <div class="card-body">
-              <h5 class="card-title">Voleibol</h5>
-              <p class="card-text">Torneo mixto de invierno.</p>
-            </div>
-            <div class="card-footer bg-transparent">
-              <a routerLink="/results" class="btn btn-primary btn-sm">Ver resultados</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 </main>
