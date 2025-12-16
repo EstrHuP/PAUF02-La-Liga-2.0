@@ -5,6 +5,7 @@ import { ResultsPage } from './features/results/pages/results-page/results-page'
 import { ClasificationsPage } from './features/clasifications/pages/clasifications-page/clasifications-page';
 import { PlayerPage } from './features/players/pages/players-page/players-page';
 import { RefereesPage } from './features/referees/pages/referees-page/referees-page';
+import { ContactPage } from './features/contact/pages/contact-page/contact-page';
 
 export const routes: Routes = [
     // HOME
@@ -53,5 +54,13 @@ export const routes: Routes = [
         redirectTo: 'referees',
         pathMatch: 'full'
     },
-    { path:'referees', component: RefereesPage }
+    { path:'referees', component: RefereesPage },
+
+    // CONTACT
+    {
+        path: '',
+        redirectTo: 'contact',
+        pathMatch: 'full'
+    },
+    { path:'contact', component: ContactPage }
 ];
