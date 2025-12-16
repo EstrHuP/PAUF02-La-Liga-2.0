@@ -4,6 +4,7 @@ import { TeamsPage } from './features/teams/pages/teams-page/teams-page';
 import { ResultsPage } from './features/results/pages/results-page/results-page';
 import { ClasificationsPage } from './features/clasifications/pages/clasifications-page/clasifications-page';
 import { PlayerPage } from './features/players/pages/players-page/players-page';
+import { RefereesPage } from './features/referees/pages/referees-page/referees-page';
 
 export const routes: Routes = [
     // HOME
@@ -44,5 +45,13 @@ export const routes: Routes = [
         redirectTo: 'players',
         pathMatch: 'full'
     },
-    { path:'players', component: PlayerPage }
+    { path:'players', component: PlayerPage },
+
+    // REFEREES
+    {
+        path: '',
+        redirectTo: 'referees',
+        pathMatch: 'full'
+    },
+    { path:'referees', component: RefereesPage }
 ];
