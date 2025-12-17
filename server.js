@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import Usuario from "./src/app/core/models/User.js";
+import User from "./src/app/core/models/User.js";
 
 dotenv.config();
 const app = express();
@@ -15,20 +15,34 @@ app.use(express.json());
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("¡¡¡Conectado a MongoDB!!!"))
   .catch(err => console.log("Error al conectarse a MongoDB :(", err));
+  
+  mongoose.connection.once("open", () => {
+  console.log("DB name:", mongoose.connection.name);
+});
 
-// Ruta de login
-app.post("/api/login", async (req, res) => {
-  const { userName, password } = req.body;
-  console.log("Datos recibidos:", req.body);
-
+//// POST - REGISTER /////
+app.post("/api/register", async (req, res) => {
   try {
-    // Busca en la colección "usuarios"
-    const user = await Usuario.findOne({ userName, password });
-    console.log("Resultado de búsqueda:", user);
+    const newUser = await User.create(req.body);
+    console.log("User saved:", newUser);
+    res.status(200).json(newUser);
+  } catch (err) {
+    res.status(400).json({ message:"Error creating user"});
+  }
+})
 
-    res.json({ message: "Login exitoso", user });
+/////// GET - LOGIN /////////
+app.get("/api/login", async (req, res) => {
+  const { username, password } = req.body;
+  try {
+    const user = await User.findOne({ username, password });
+    if (!user) {
+      res.status(409).json({ message: "Something is wrong"})
+    } else {
+      res.status(200).json({ message: "Login exitoso", user });
+    }
   } catch (error) {
-    console.error("Error al buscar usuario:", error);
+    res.status(400).json({ message:"Error getting user"});
   }
 });
 
