@@ -39,6 +39,7 @@ export class Register {
       .subscribe(
         (res) => {
           console.log("usuario creado:", res);
+          alert("Usuario creado correctamente");
       },
       (err) => {
         console.error("Error al registrar usuario:", err);
