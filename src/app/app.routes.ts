@@ -6,61 +6,32 @@ import { ClasificationsPage } from './features/clasifications/pages/clasificatio
 import { PlayerPage } from './features/players/pages/players-page/players-page';
 import { RefereesPage } from './features/referees/pages/referees-page/referees-page';
 import { ContactPage } from './features/contact/pages/contact-page/contact-page';
+import { Login } from './shared/components/login/login';
+import { Register } from './shared/components/register/register';
+import { AdminPage } from './features/dashboard/pages/admin-page/admin-page';
+import { ArbitroPage } from './features/dashboard/pages/arbitro-page/arbitro-page';
+import { CapitanPage } from './features/dashboard/pages/capitan-page/capitan-page';
+import { UsuarioPage } from './features/dashboard/pages/usuario-page/usuario-page';
 
 export const routes: Routes = [
-    // HOME
-    {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
-    },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path:'home', component: HomePage },
-
-    // TEAMS
-    {
-        path: '',
-        redirectTo: 'teams',
-        pathMatch: 'full'
-    },
+ 
+    // PAGES
     { path:'teams', component: TeamsPage },
-
-    // RESULTS
-    {
-        path: '',
-        redirectTo: 'results',
-        pathMatch: 'full'
-    },
     { path:'results', component: ResultsPage },
-
-    // CLASIFICATIONS
-    {
-        path: '',
-        redirectTo: 'clasifications',
-        pathMatch: 'full'
-    },
     { path:'clasifications', component: ClasificationsPage },
-
-    // PLAYERS
-    {
-        path: '',
-        redirectTo: 'players',
-        pathMatch: 'full'
-    },
     { path:'players', component: PlayerPage },
-
-    // REFEREES
-    {
-        path: '',
-        redirectTo: 'referees',
-        pathMatch: 'full'
-    },
     { path:'referees', component: RefereesPage },
+    { path:'contact', component: ContactPage },
 
-    // CONTACT
-    {
-        path: '',
-        redirectTo: 'contact',
-        pathMatch: 'full'
-    },
-    { path:'contact', component: ContactPage }
+    // INDEX
+    { path:'index_admin', component: AdminPage },
+    { path:'index_arbitro', component: ArbitroPage },
+    { path:'index_capitan', component: CapitanPage },
+    { path:'index_usuario', component: UsuarioPage },
+
+    // AUTH
+    { path:'login', component: Login },
+    { path:'register', component: Register }
 ];
