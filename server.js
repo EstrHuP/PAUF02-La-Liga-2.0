@@ -33,9 +33,9 @@ app.post("/api/register", async (req, res) => {
 
 /////// GET - LOGIN /////////
 app.get("/api/login", async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
   try {
-    const user = await User.findOne({ username, password });
+    const user = await User.findOne({ email, password });
     if (!user) {
       res.status(409).json({ message: "Something is wrong"})
     } else {
