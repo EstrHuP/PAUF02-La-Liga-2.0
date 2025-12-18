@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import User from "./src/app/core/models/User.js";
+import Partidos from "./src/app/core/models/Partidos.js";
 
 dotenv.config();
 const app = express();
@@ -46,6 +47,16 @@ app.get("/api/login", async (req, res) => {
     res.status(400).json({ message:"Error getting user"});
   }
 });
+
+app.post("/api/partidos", async (req, res) => {
+  try {
+    const newPartido = await Partidos.create(req.body);
+    console.log("Partido saved:", newPartido);
+    res.status(200).json(newPartido);
+  } catch (err) {
+    res.status(400).json({ message:"Error creating partido"});
+  }
+}) 
 
 // Puerto
 const PORT = process.env.PORT || 3000;

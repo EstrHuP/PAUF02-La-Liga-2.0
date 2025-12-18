@@ -1,1 +1,69 @@
-<p>admin-page works!</p>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <h2>Crear Partido</h2>
+      <form (ngSubmit)="crearPartido()">
+        <div class="mb-3">
+          <label for="deporte">Deporte</label>
+          <select class="form-select" [(ngModel)]="newPartido.deporte" name="deporte">
+            <option *ngFor="let deporte of deportes" [value]="deporte.value">
+              {{ deporte.label }}
+            </option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="equipo1">Nombre equipo LOCAL:</label>
+          <input
+            [(ngModel)]="newPartido.equipo1"
+            name="equipo1"
+            class="form-control"
+            id="equipo1"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="equipo2">Nombre equipo VISITANTE:</label>
+          <input
+            [(ngModel)]="newPartido.equipo2"
+            name="equipo2"
+            class="form-control"
+            id="equipo2"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="fecha">Fecha:</label>
+          <input
+            [(ngModel)]="newPartido.fecha"
+            name="fecha"
+            class="form-control"
+            id="fecha"
+            type="date"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="arbitro">Árbitro:</label>
+          <input
+            [(ngModel)]="newPartido.arbitro"
+            name="arbitro"
+            class="form-control"
+            id="arbitro"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="ubicacion">Ubicación:</label>
+          <input
+            [(ngModel)]="newPartido.ubicacion"
+            name="ubicacion"
+            class="form-control"
+            id="ubicacion"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Crear Partido</button>
+      </form>
+    </div>
+  </div>
+</div>
