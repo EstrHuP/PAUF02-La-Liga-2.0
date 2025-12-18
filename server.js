@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors()); // Angular puede hacer peticiones
 app.use(express.json());
 
 // Conexión a MongoDB
@@ -33,12 +33,13 @@ app.post("/api/register", async (req, res) => {
 
 /////// GET - LOGIN /////////
 app.get("/api/login", async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password } = req.query;
   try {
     const user = await User.findOne({ email, password });
     if (!user) {
       res.status(409).json({ message: "Something is wrong"})
     } else {
+      console.log("User:", user);
       res.status(200).json({ message: "Login exitoso", user });
     }
   } catch (error) {

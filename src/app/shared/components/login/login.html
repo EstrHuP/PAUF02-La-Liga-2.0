@@ -15,7 +15,7 @@
                     required
                     [class.is-invalid]="emailCtrl.invalid && (emailCtrl.touched || loginForm.submitted)"
               >
-               <div class="invalid-feedback">El email es obligatorio</div>
+               <div class="invalid-feedback">Campo obligatorio</div>
             </div>
             <div class="mb-3">
               <label for="password" class="form-label">Contraseña:</label>
@@ -27,7 +27,7 @@
                     required
                     [class.is-invalid]="passwordCtrl.invalid && (passwordCtrl.touched || loginForm.submitted)"
                     >
-                <div class="invalid-feedback">La contraseña es obligatoria</div>
+                <div class="invalid-feedback">Campo obligatorio</div>
             </div>
             <button type="submit" class="btn btn-success w-100" [disabled]="loginForm.invalid">Entrar</button>
           </form>

@@ -36,6 +36,13 @@ export class Register {
     if (form.invalid) return;
 
     this.authService.register(this.newUser)
-      .subscribe(res => console.log("usuario creado:", res));
+      .subscribe(
+        (res) => {
+          console.log("usuario creado:", res);
+      },
+      (err) => {
+        console.error("Error al registrar usuario:", err);
+      }
+    )
   }
 }
