@@ -48,6 +48,7 @@ app.get("/api/login", async (req, res) => {
   }
 });
 
+/////// POST - CREATE Partidos ///////
 app.post("/api/partidos", async (req, res) => {
   try {
     const newPartido = await Partidos.create(req.body);
@@ -57,6 +58,38 @@ app.post("/api/partidos", async (req, res) => {
     res.status(400).json({ message:"Error creating partido"});
   }
 }) 
+
+/////// GET - Lista Partidos ///////
+app.get("/api/partidos", async (req, res) => {
+  try {
+    const partidos = await Partidos.find();
+    res.status(200).json(partidos);
+  } catch (err) {
+    res.status(400).json({ message: "Error fetching partidos" });
+  }
+});
+
+/////// DELETE - Eliminar Partido ///////
+app.delete("/api/partidos/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    await Partidos.findByIdAndDelete(id);
+    res.status(200).json({ message: "Partido eliminado correctamente" });
+  } catch (err) {
+    res.status(400).json({ message: "Error eliminando partido" });
+  }
+});
+
+/////// PUT - Actualizar Partido ///////
+app.put("/api/partidos/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const updatedPartido = await Partidos.findByIdAndUpdate(id, req.body, { new: true });
+    res.status(200).json(updatedPartido);
+  } catch (err) {
+    res.status(400).json({ message: "Error actualizando partido" });
+  }
+});
 
 // Puerto
 const PORT = process.env.PORT || 3000;
