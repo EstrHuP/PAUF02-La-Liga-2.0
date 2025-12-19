@@ -1,1 +1,28 @@
-<p>ARBITRO</p>
+<h2>ARBITRO</h2>
+<div *ngIf="partidos.length > 0; else noPartidos">
+  <h3>Partidos asignados:</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Deporte</th>
+        <th>Equipo Local</th>
+        <th>Equipo Visitante</th>
+        <th>Fecha</th>
+        <th>Ubicación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let partido of partidos">
+        <td>{{ partido.deporte }}</td>
+        <td>{{ partido.equipo1 }}</td>
+        <td>{{ partido.equipo2 }}</td>
+        <td>{{ partido.fecha }}</td>
+        <td>{{ partido.ubicacion }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noPartidos>
+  <p>No tienes partidos asignados.</p>
+</ng-template>

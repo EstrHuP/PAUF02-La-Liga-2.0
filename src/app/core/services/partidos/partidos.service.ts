@@ -23,4 +23,8 @@ export class PartidoService {
   updatePartido(id: string, partido: any): Observable<any> {
     return this.http.put(`${this.apiURL}/${id}`, partido);
   }
+
+  getPartidosByArbitro(arbitroId: string): Observable<any[]> {
+    return this.http.get<[any]>(`${this.apiURL}/arbitro/${arbitroId}`);
+  }
 }

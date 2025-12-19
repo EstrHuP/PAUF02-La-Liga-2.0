@@ -17,4 +17,8 @@ export class AuthService {
       params: { email, password }
     });
   }
+  getUserId(): string {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    return user?._id || ''; // Retorna el ID del usuario si existe
+  }
 }

@@ -5,7 +5,7 @@ const partidoSchema = new mongoose.Schema({
     equipo1: { type: String },
     equipo2: { type: String },
     fecha: { type: String },
-    arbitro: { type: String },
+    arbitro: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, //GET arbitro ID from User collection
     ubicacion: { type: String }
 });
 
