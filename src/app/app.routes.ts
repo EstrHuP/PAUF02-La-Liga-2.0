@@ -8,10 +8,10 @@ import { RefereesPage } from './features/referees/pages/referees-page/referees-p
 import { ContactPage } from './features/contact/pages/contact-page/contact-page';
 import { Login } from './shared/components/login/login';
 import { Register } from './shared/components/register/register';
-import { AdminPage } from './features/dashboard/pages/admin-page/admin-page';
 import { ArbitroPage } from './features/dashboard/pages/arbitro-page/arbitro-page';
 import { CapitanPage } from './features/dashboard/pages/capitan-page/capitan-page';
 import { UsuarioPage } from './features/dashboard/pages/usuario-page/usuario-page';
+import { AdminPage } from './features/dashboard/pages/admin-page/admin-page';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
