@@ -2,6 +2,10 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.3.
 
+## Documentation
+[Huecas_Perez_Esther-PAUF02.pdf](https://github.com/user-attachments/files/24309554/Huecas_Perez_Esther-PAUF02.pdf)
+
+
 ## Development server
 
 To start a local development server, run:
